@@ -15,13 +15,13 @@ print(f"os.path.join(str(Path.cwd()),'chromedriver'): {os.path.join(str(Path.cwd
 print(f"platform.system(): {platform.system()}")
 
 class Crawler(object):
-    def __init__(self):
+    def __init__(self, job_name):
+        self.job_name = job_name
         self.timestamp = self._get_timestamp()
-        self.path_job_root = self.make_job_paths()
+        self.path_job_root = self.make_job_paths(self.job_name)
         self.webpage_load_interval = 1.5
         self.driver = None
         self.home_url = None
-        self.job_name = None
 
     def _get_timestamp(self) -> str:
         """
@@ -38,7 +38,6 @@ class Crawler(object):
 
     def generate_icd10data(self):
         self.home_url = "https://www.icd10data.com/ICD10CM/Codes"
-        self.job_name = "icd10_crawler"
         self.driver = self.make_web_browser()
         self.visit_web_page(self.home_url)
         self.download_source()
@@ -175,7 +174,7 @@ class Crawler(object):
 
 class test_unittest(unittest.TestCase):
     def test_crawler(self):
-        crawler = Crawler()
+        crawler = Crawler("test_crawler")
         crawler.generate_icd10data()
 
 
