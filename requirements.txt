@@ -1,3 +1,4 @@
 fake_useragent
 selenium
 bs4
+openpyxl
