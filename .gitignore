@@ -3,3 +3,5 @@ DATABASE
 *.pyc
 __pycache__/standalone_tools.cpython-39.pyc
 scratchpad.py
+venv
+.vscode

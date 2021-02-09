@@ -268,7 +268,7 @@ class Crawler(object):
         chrome_options.add_experimental_option("prefs", prefs)
         if platform.system() != "Windows":
             # assuming linux - also make sure that the chromedriver version is right before using it on linux
-            self.driver = webdriver.Chrome(os.path.join(str(Path.cwd()), 'chromedriver'), chrome_options=chrome_options)
+            self.driver = webdriver.Chrome(os.path.join(str(Path.cwd()), 'chromedriver_88'), chrome_options=chrome_options)
         else:
             self.driver = webdriver.Chrome(os.path.join(str(Path.cwd()), 'chromedriver_88.exe'), chrome_options=chrome_options)
         time.sleep(1)
