@@ -38,7 +38,7 @@ def eventlog(logstring):
         f.write('\n')
 
     if os.path.getsize(str(os.path.join(Path.cwd(), 'eventlog.log'))) > 1000000:
-        with open(str(os.path.join(Path.cwd(), 'eventlog.log'), "w")) as f:
+        with open(os.path.join(Path.cwd(), 'eventlog.log'), "w") as f:
             f.write('')
             f.close()
 

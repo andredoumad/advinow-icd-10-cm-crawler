@@ -2,3 +2,4 @@ DATABASE
 *.log
 *.pyc
 __pycache__/standalone_tools.cpython-39.pyc
+scratchpad.py
